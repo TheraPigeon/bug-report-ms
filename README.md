@@ -9,7 +9,7 @@ Pings the service to see if it's up and running.
 Request: 
 
 ```
-url/pring
+url/ping
 ```
 
 Response:
