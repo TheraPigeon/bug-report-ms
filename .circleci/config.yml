@@ -17,6 +17,7 @@ jobs:
                   sudo apt-get install python-pip python-dev build-essential
                   sudo apt-get install python3-pip python3-dev build-essential
                   sudo pip install --upgrade setuptools
+                  sudo pip install "pytest<5"
                   sudo pip install awsebcli --upgrade
             - run:
                 name: Deploying
