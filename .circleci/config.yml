@@ -16,7 +16,8 @@ jobs:
             echo "[profile eb-cli]" > ~/.aws/config
             echo "aws_access_key_id=$AWS_ACCESS_KEY_ID" >> ~/.aws/config
             echo "aws_secret_access_key=$AWS_SECRET_ACCESS_KEY" >> ~/.aws/co
-            eb deploy Therapigeonbugreporterms-env
+            eb use Therapigeonbugreporterms-env --profile eb-cli
+            eb deploy -v --profile eb-cli
 
 workflows:
   deploy:
