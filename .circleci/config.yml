@@ -15,16 +15,14 @@ jobs:
           command: |
             mkdir ~/.aws
             touch ~/.aws/config
-            chmod 777 ~/.aws/config
+            chmod 600 ~/.aws/config
             echo "[profile eb-cli]" > ~/.aws/config
             echo "aws_access_key_id=$AWS_ACCESS_KEY_ID" >> ~/.aws/config
             echo "aws_secret_access_key=$AWS_SECRET_ACCESS_KEY" >> ~/.aws/config
-            echo "[default]" > ~/.aws/config
-            echo "region=us-east-1" >> ~/.aws/config
       - run:
           name: deploy
           command: |
-            eb use Therapigeonbugreporterms-env --profile eb-cli
+            eb use Therapigeonbugreporterms-env --profile eb-cli --region us-east-1
             eb deploy -v --profile eb-cli --region us-east-1
 
 workflows:
