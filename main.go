@@ -37,7 +37,7 @@ func soupHandler(w http.ResponseWriter, r *http.Request) {
 			jsonReport, err := json.Marshal(bugReport)
 
 			fmt.Println(r.URL.Query())
-			resp, err := http.Post(os.Getenv("SOUP-HOOK"), "application/json", bytes.NewReader(jsonReport))
+			resp, err := http.Post(os.Getenv("SOUP_HOOK"), "application/json", bytes.NewReader(jsonReport))
 
 			if err != nil {
 				fmt.Fprintf(w, fmt.Sprintln(err))
@@ -59,7 +59,12 @@ func main() {
 	// Loads environmental variables
 	err := godotenv.Load()
 	if err != nil {
-		log.Fatal("Error loading .env file")
+		fmt.Println("Can't load a .env file...")
+		if os.Getenv("SOUP_HOOK") != "" {
+			fmt.Println("That's ok though! I found the variable I was looking for.")
+		} else {
+			panic(err)
+		}
 	}
 
 	http.HandleFunc("/", indexHandler)
