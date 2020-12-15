@@ -23,7 +23,7 @@ jobs:
           name: deploy
           command: |
             eb use Therapigeonbugreporterms-env --profile eb-cli
-            eb deploy -v --profile eb-cli
+            eb deploy -v --profile eb-cli --region us-east-1
 
 workflows:
   deploy:
