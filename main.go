@@ -16,11 +16,11 @@ type bugData struct {
 }
 
 func indexHandler(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "TheraPigeon Bug Report Microservice - Now hosted on EB")
+	fmt.Fprintf(w, "TheraPigeon Bug Report Microservice")
 }
 
 func pingHandler(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "pong - The service is online.")
+	fmt.Fprintf(w, "pong")
 	fmt.Println(r.URL.Query())
 }
 
