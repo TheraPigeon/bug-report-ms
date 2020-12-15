@@ -37,7 +37,8 @@ workflows:
   deploy:
     jobs:
       - slack/on-hold:
-        context: aws
+          context: 
+            - aws
       - hold:
           type: approval
           requires:
