@@ -1,8 +1,6 @@
 version: 2.1
 orbs:
   node: circleci/node@1.1
-  aws-cli: circleci/aws-cli@1.3.1
-  aws-eb-cli: speakable-org/aws-eb-cli@1.0.0
 jobs:
   build-and-test:
     executor:
@@ -11,6 +9,14 @@ jobs:
       - checkout
       - node/with-cache:
           steps:
+            - run: npm install
+            - run:
+                name: Installing deployment dependencies
+                command: |
+                  sudo apt-get install python3.7
+                  sudo curl -O https://bootstrap.pypa.io/get-pip.py
+                  sudo pip install --upgrade setuptools
+                  sudo pip install awsebcli --upgrade
             - run:
                 name: Deploying
                 command: eb deploy Therapigeonbugreporterms-env
