@@ -13,11 +13,11 @@ jobs:
             eb deploy Therapigeonbugreporterms-env
 
 workflows:
-  build-and-test:
+  deploy:
     jobs:
       - hold:
           type: approval
-      - build-and-test:
+      - deploy:
           requires: 
             - hold
           context: aws
