@@ -20,7 +20,7 @@ func indexHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func pingHandler(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "pong")
+	fmt.Fprintf(w, "pong - The service is online.")
 	fmt.Println(r.URL.Query())
 }
 

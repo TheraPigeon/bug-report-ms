@@ -2,13 +2,19 @@ TheraPigeon-wide bug reporting microservice. Sends bug reports to the appropriat
 
 A Docker image is automatically built when code is pushed to the master branch.
 
+### URL
+
+```
+http://therapigeonbugreporterms-env.eba-cpajmpju.us-east-1.elasticbeanstalk.com/
+```
+
 ### Endpoints
 
 ## Ping
 
 Pings the service to see if it's up and running.
 
-Request: 
+Request: **GET method**
 
 ```
 url/ping
@@ -24,8 +30,8 @@ pong
 
 Submits the user's bug report to the SOUP workspace on slack.
 
-Request:
+Request: **POST method**
 
 ```
-url/soup?bug=write your bug submission string here
+url/soup/?bug=write your bug submission string here
 ```
