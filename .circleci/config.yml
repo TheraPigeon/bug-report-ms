@@ -7,15 +7,21 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Install awscli and deploy
+          name: Install awscli
           command: |
             sudo pip install awsebcli --upgrade
+      - run:
+          name: Create AWS credentials
+          command: |
             mkdir ~/.aws
             touch ~/.aws/config
             chmod 600 ~/.aws/config
             echo "[profile eb-cli]" > ~/.aws/config
             echo "aws_access_key_id=$AWS_ACCESS_KEY_ID" >> ~/.aws/config
             echo "aws_secret_access_key=$AWS_SECRET_ACCESS_KEY" >> ~/.aws/co
+      - run:
+          name: deploy
+          command: |
             eb use Therapigeonbugreporterms-env --profile eb-cli
             eb deploy -v --profile eb-cli
 
