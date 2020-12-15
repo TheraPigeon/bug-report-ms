@@ -16,7 +16,7 @@ type bugData struct {
 }
 
 func indexHandler(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "TheraPigeon Bug Report Microservice")
+	fmt.Fprintf(w, "TheraPigeon Bug Report Microservice - Now hosted on Elastic Beanstalk")
 }
 
 func pingHandler(w http.ResponseWriter, r *http.Request) {
