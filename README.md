@@ -1,5 +1,7 @@
 TheraPigeon-wide bug reporting microservice. Sends bug reports to the appropriate Slack workspace.
 
+A Docker image is automatically built when code is pushed to the master branch.
+
 ### Endpoints
 
 ## Ping
