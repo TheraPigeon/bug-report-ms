@@ -26,7 +26,7 @@ workflows:
   build-and-test:
     jobs:
       - hold:
-        type: approval
+          type: approval
       - build-and-test:
           requires: hold
           context: aws
