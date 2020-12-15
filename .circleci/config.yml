@@ -8,7 +8,7 @@ jobs:
       name: aws-eb-cli/default
     steps:
       - checkout
-      - aws-eb-cli/with-cache:
+      - aws-eb-cli:
           steps:
             - run:
                 name: Deploying
