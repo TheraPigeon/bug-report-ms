@@ -1,0 +1,18 @@
+{
+    "AWSEBDockerrunVersion": "1",
+    "Ports": [
+        {
+            "ContainerPort": "8080"
+        }
+    ],
+    "Authentication": {
+        "Bucket": "therapigeon-docker-creds",
+        "Key": "config.json"
+    },
+    "Image": {
+        "Name": "zjcrumpton/bug-report-ms",
+        "Update": "true"
+    },
+    "Volumes": [],
+    "Logging": "/var/log/nginx"
+}
