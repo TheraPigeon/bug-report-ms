@@ -27,7 +27,7 @@ func pingHandler(w http.ResponseWriter, r *http.Request) {
 func soupHandler(w http.ResponseWriter, r *http.Request) {
 	switch r.Method {
 	case "GET":
-		fmt.Fprintf(w, "Sorry, no GET method is available for this endpoint!")
+		fmt.Fprintf(w, "Sorry, no GET method is available for the endpoint!")
 	case "POST":
 		q := r.URL.Query()
 		value, ok := q["bug"]
