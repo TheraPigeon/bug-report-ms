@@ -22,7 +22,7 @@ pong
 
 ## Soup
 
-Submits a bug report to the SOUP workspace on slack.
+Submits the user's bug report to the SOUP workspace on slack.
 
 Request:
 
