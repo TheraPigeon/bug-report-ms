@@ -1,4 +1,6 @@
 version: 2.1
+orbs:
+  slack: circleci/slack@4.1.3
 jobs:
   deploy:
     docker:
@@ -24,12 +26,22 @@ jobs:
           command: |
             eb use Therapigeonbugreporterms-env --profile eb-cli 
             eb deploy -v --profile eb-cli
+      - slack/notify:
+          event: fail
+          template: basic_fail_1
+      - slack/notify:
+          event: pass
+          template: success_tagged_deploy_1
 
 workflows:
   deploy:
     jobs:
+      - slack/on-hold:
+        context: aws
       - hold:
           type: approval
+          requires:
+            - slack/on-hold
       - deploy:
           requires: 
             - hold
