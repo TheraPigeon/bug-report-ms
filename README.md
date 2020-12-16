@@ -5,7 +5,7 @@ A Docker image is automatically built when code is pushed to the master branch.
 ### URL
 
 ```
-http://therapigeonbugreporterms-env.eba-cpajmpju.us-east-1.elasticbeanstalk.com/
+https://therapigeonbugreporterms-env.eba-cpajmpju.us-east-1.elasticbeanstalk.com/
 ```
 
 ### Endpoints
